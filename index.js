@@ -1,8 +1,5 @@
 //***the code should generate as many stars as the number is + 2 on the bottom row + 2 on the bottom row
 
-//***the code should be with addEventListener() maybe?
-
-//var oddNumberCheck = "";
 
 //var numOdd = prompt("Please type in an odd number:");
 //var oddNum = Number(stringOdd);
@@ -36,8 +33,13 @@
 //}
 
 
-//***most probable n()
-function isntEven(n){
+var logo = {
+    letter: "*",
+    space: "-"
+};
+
+
+function oddNum(n){
 while(n <=333){
 	if(n % 2 !== 0){
 	console.log(n);
