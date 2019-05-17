@@ -46,7 +46,10 @@ while(n <=333){
 	}
 	n++;
 }
-}
+};
+
+console.log(logo.letter.repeat(3))
+
 
 
 //for (n=2; n<10000; n++) {
