@@ -42,8 +42,8 @@ var logo = {
 var minVal = 2;
 var maxVal = 10000;
 
-function letterBuilder(x) {
-    var firstRow = console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
+function firstRow(x) {
+    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
 }
 
 function spaceBuilder(x) {
@@ -52,19 +52,14 @@ function spaceBuilder(x) {
 
 function oddNum(x) {
     if (x % 2 !== 0) {
-        return letterBuilder(x);
+        console.log(firstRow(x));
     }
-}
-
-function logoBuilder(x) {
-    return logo.space.repeat(x);
-    return logo.letter.repeat(x);
 }
 
 function showLogo(x) {
     if (x > minVal && x < maxVal) {
         if (oddNum(x)) {
-            return logoBuilder(x);
+            return oddNum(x);
         }
     }
 }
