@@ -22,6 +22,7 @@
 //***on the 1st row we have 5- 5* 5- 5* 10- 5* 5- 5* 5-
 //on the last row we have 5* 5- 5* 5- 10* 5- 5* 5- 5*
 
+//***should use startsWith('*') for the last line -> so when on a new line the 1st symbol is *, it stops.
 
 
 
@@ -83,7 +84,6 @@ function showLogo(x) {
 //        console.log("***---***---******---***---***");
 //    }
 //}
-
 
 
 
