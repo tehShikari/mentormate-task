@@ -24,6 +24,15 @@
 
 //***should use startsWith('*') for the last line -> so when on a new line the 1st symbol is *, it stops.
 
+//*** trying out pseudocode:
+
+//if x is odd && higher than minVal && lower than maxVal
+//    create a line of logo{} (each * x * 5) * 2
+//    create additional lines where logo.letter increments +1 on each side 
+//    while logo.space decrements by 1 on each side
+//    the lines are x + 1
+
+
 
 
 
@@ -44,7 +53,7 @@ var minVal = 2;
 var maxVal = 10000;
 
 function firstRow(x) {
-    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
+    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
 }
 
 function spaceBuilder(x) {
@@ -84,9 +93,6 @@ function showLogo(x) {
 //        console.log("***---***---******---***---***");
 //    }
 //}
-
-
-
 
 
 
