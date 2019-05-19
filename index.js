@@ -1,8 +1,10 @@
 /*jslint devel: true */
 
 
-//***the code should generate as many stars as the number is + 2 on the bottom row + 2 on the bottom row
-//and - 2 hyphens on the next row from one part of the MM.
+//***the code should generate as many stars as the given number is + 2 on the bottom row + 2 on the bottom row
+//and - 2 hyphens on the next row from one part of the MM. When the 2 sets of stars collide, the next row must go backwards
+//-> the stars go in the middle and they decrement -2, while hyphens go up +2, until the stars reach the beginning of the row
+//and stars and hyphens are the same number as initially given x
 
 //***it should be like: make 3 originally + new row with 2 more stars, although it should be 
 //calculated with the precise algorithm that displays the stars that overlap each other correctly.
@@ -32,6 +34,14 @@
 //    while logo.space decrements by 1 on each side
 //    the rows' length is x + 1
 
+//***1st row  hyphens = 1st row stars;; 2nd row hyphens = x - 1 and stars = x + 2
+//every time until row.startsWith(logo.star) && row.endsWith(logo.star)
+// ^ this is for the left and right side of 'M'. while for the inner side:
+//they have to collide and mix, making a bigger amount of stars, yet the same amount
+//which is given is coming from every side -> \/ but also mixed like X
+//Yet, the 'X' is not complete, the bottom ends of it are missing a * each
+//
+
 //*** make an object holding all the functions
 
 
@@ -46,31 +56,37 @@
 
 
 var logo = {
-    letter: "*",
-    space: "-"
+    star: "*",
+    hyphen: "-"
 };
 
+var x = 0;
 var minVal = 2;
 var maxVal = 10000;
 
+//builds 1st M of 1st row
 function firstRow(x) {
-    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
+    var row1 = console.log(logo.hyphen.repeat(x) + logo.star.repeat(x) + logo.hyphen.repeat(x) + logo.star.repeat(x) + logo.hyphen.repeat(x));
 }
 
+//builds a hyphen
 function spaceBuilder(x) {
-    return logo.space.repeat(x);
+    return logo.hyphen.repeat(x);
 }
 
+//checks if x is odd + prints the 1st row
 function oddNum(x) {
     if (x % 2 !== 0) {
-        console.log(firstRow(x));
+        firstRow(x);
     }
 }
 
+//checks if x is in correct range and executes oddNum() 
 function showLogo(x) {
     if (x > minVal && x < maxVal) {
         if (oddNum(x)) {
-            return oddNum(x);
+//            return oddNum(x);
+            firstRow
         }
     }
 }
@@ -96,6 +112,10 @@ function showLogo(x) {
 //}
 
 
+
+var str = 'Twas the night before Xmas...';
+var newstr = str.replace(/before/i, 'Christmas');
+console.log(newstr);  // Twas the night before Christmas...
 
 
 
