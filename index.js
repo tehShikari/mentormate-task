@@ -40,7 +40,9 @@
 //they have to collide and mix, making a bigger amount of stars, yet the same amount
 //which is given is coming from every side -> \/ but also mixed like X
 //Yet, the 'X' is not complete, the bottom ends of it are missing a * each
-//
+
+//*** while the number of rows is === to x, continue;
+//when the number of rows > x, return rows;
 
 //*** make an object holding all the functions
 
@@ -60,11 +62,12 @@ var logo = {
     space: "-"
 };
 
+var str = ""
 var minVal = 2;
 var maxVal = 10000;
 
-function firstRow(x) {
-    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
+var firstRow = function(x) {
+   str = console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
 }
 
 function spaceBuilder(x) {
@@ -73,7 +76,9 @@ function spaceBuilder(x) {
 
 function oddNum(x) {
     if (x % 2 !== 0) {
-        console.log(firstRow(x));
+        firstRow(x);
+        firstRow = firstRow.toString(firstRow);
+        console.log(typeof(firstRow));
     }
 }
 
@@ -107,9 +112,9 @@ function showLogo(x) {
 
 
 
-var str = 'Twas the night before Xmas...';
-var newstr = str.replace(/before/i, 'Christmas');
-console.log(newstr);  // Twas the night before Christmas...
+//var str = 'Twas the night before Xmas...';
+//var newstr = str.replace(/before/i, 'Christmas');
+//console.log(newstr);  // Twas the night before Christmas...
 
 
 
