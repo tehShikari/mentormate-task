@@ -56,37 +56,31 @@
 
 
 var logo = {
-    star: "*",
-    hyphen: "-"
+    letter: "*",
+    space: "-"
 };
 
-var x = 0;
 var minVal = 2;
 var maxVal = 10000;
 
-//builds 1st M of 1st row
 function firstRow(x) {
-    var row1 = console.log(logo.hyphen.repeat(x) + logo.star.repeat(x) + logo.hyphen.repeat(x) + logo.star.repeat(x) + logo.hyphen.repeat(x));
+    console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
 }
 
-//builds a hyphen
 function spaceBuilder(x) {
-    return logo.hyphen.repeat(x);
+    return logo.space.repeat(x);
 }
 
-//checks if x is odd + prints the 1st row
 function oddNum(x) {
     if (x % 2 !== 0) {
-        firstRow(x);
+        console.log(firstRow(x));
     }
 }
 
-//checks if x is in correct range and executes oddNum() 
 function showLogo(x) {
     if (x > minVal && x < maxVal) {
         if (oddNum(x)) {
-//            return oddNum(x);
-            firstRow
+            return oddNum(x);
         }
     }
 }
