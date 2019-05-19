@@ -11,18 +11,18 @@
 //where N is the number of stars in the 1st and last row, 1st and last rows are
 //simply turned around.
 
-//***the stars on the top row are as many asthe hyphens. On every row, the hyphens decremete with 1, until 
+//***the stars on the top row are as many as the hyphens. On every row, the hyphens decrement -1, until 
 //there are 0 hyphens on the 1st part of the bottom row -> until they are turned around.
 
 //***the stars divide themselves when they are about to collide and the next row has the same number of stars
-//in the middle as the previos row had 2 sets of the same number, while on the 2 sides we get the initial
-//number of stars, until they reach the end of the line and they have completely turned around. On the last
+//in the middle as the previos row had 2 sets of the same number of stars, while on the 2 sides we get the initial
+//number of stars, until they reach the end of the line and they have completely turned around(the stars and the hyphens). On the last
 //row, the numbers of stars are equal to themselves and to the number of hyphens.
 
-//***on the 1st row we have 5- 5* 5- 5* 10- 5* 5- 5* 5-
-//on the last row we have 5* 5- 5* 5- 10* 5- 5* 5- 5*
+//***on the 1st row we have     5- 5* 5- 5* 10- 5* 5- 5* 5-
+//on the last row we have       5* 5- 5* 5- 10* 5- 5* 5- 5*
 
-//***should use startsWith('*') for the last line -> so when on a new line the 1st symbol is *, it stops.
+//***should use if(row.startsWith('*')) for the last line -> so when on a new line the 1st symbol is *, it stops.
 
 //*** trying out pseudocode:
 
@@ -30,8 +30,9 @@
 //    create a line of logo{} (each * x * 5) * 2
 //    create additional lines where logo.letter increments +1 on each side 
 //    while logo.space decrements by 1 on each side
-//    the lines are x + 1
+//    the rows' length is x + 1
 
+//*** make an object holding all the functions
 
 
 
