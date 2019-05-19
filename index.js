@@ -115,5 +115,19 @@ console.log(newstr);  // Twas the night before Christmas...
 
 
 
+for (var i=0; i<5; i++) {
+  console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
+}
+
+//the output is:
+
+//[13:14:13.481] Hello, Bob. You've called me 1 times.
+//[13:14:13.483] Hello, Bob. You've called me 2 times.
+//[13:14:13.485] Hello, Bob. You've called me 3 times.
+//[13:14:13.487] Hello, Bob. You've called me 4 times.
+//[13:14:13.488] Hello, Bob. You've called me 5 times.
+
+
+
 
 
