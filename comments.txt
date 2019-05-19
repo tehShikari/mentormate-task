@@ -2,7 +2,7 @@
 
 
 ***the code should generate as many stars as the given number is + 2 on the bottom row + 2 on the bottom row
-and - 2 hyphens on the next row from one part of the MM. When the 2 sets of stars collide, the next row must go backwards
+and - 2 hyphens on the next row from one part of the MM logo. When the 2 sets of stars(left and right) collide, the next row must go backwards
 -> the stars go in the middle and they decrement -2, while hyphens go up +2, until the stars reach the beginning of the row
 and stars and hyphens are the same number as initially given x
 
@@ -24,29 +24,37 @@ row, the numbers of stars are equal to themselves and to the number of hyphens.
 ***on the 1st row we have     5- 5* 5- 5* 10- 5* 5- 5* 5-
 on the last row we have       5* 5- 5* 5- 10* 5- 5* 5- 5*
 
-***should use if(row.startsWith('*')) for the last line -> so when on a new line the 1st symbol is *, it stops.
+***should use if(row.startsWith(logo.letterLeft)) for the last line -> so when on a new line the 1st symbol is *, it stops.
 
 *** trying out pseudocode:
 
 if x is odd && higher than minVal && lower than maxVal
-    create a line of logo{} (each * x * 5) * 2
-    create additional lines where logo.letter increments +1 on each side 
-    while logo.space decrements by 1 on each side
+    create a line of logo{} (each * x * 5) * 2 => 'MM'
+//    create additional lines where logo.letter increments +1 on each side 
+    now -> logo.letter.left/right +1 each, 
+        left -> +1 * on the beginning;
+        right -> +1 * on the end;
+    while logo.space.left/middle/right decrements by 1 on each side
+        left -> -1 on end;
+        middle -> -1 on both sides;
+        right -> -1 on start;
+    until row.startsWith(logo.letterLeft) && row.startsWith(logo.letterRight);
     the rows' length is x + 1
+    
 
-***1st row  hyphens = 1st row stars;; 2nd row hyphens = x - 1 and stars = x + 2
-every time until row.startsWith(logo.star) && row.endsWith(logo.star)
+***1st row x = (hyphens) = (stars);; 2nd row hyphens = x - 1 and stars = x + 2
+every time until row.startsWith(logo.letterLeft) && row.endsWith(logo.letterRight)
  ^ this is for the left and right side of 'M'. while for the inner side:
 they have to collide and mix, making a bigger amount of stars, yet the same amount
 which is given is coming from every side -> \/ but also mixed like X
-Yet, the 'X' is not complete, the bottom ends of it are missing a * each
+Yet, the 'X' is not complete, the bottom ends of it are missing a * each (that is in the middle)
 
 *** while the number of rows is === to x, continue;
 when the number of rows > x, return rows;
 
 
 *** take x * logo.letterLeft 
-
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode#Using_fromCharCode
 
 ***swapping tea with coffee example
 var str = "I like coffee more than I like tea";
@@ -56,60 +64,60 @@ var newStr = str.replace(/(coffee|tea)/g, function(x) {
 alert(newStr); 
 
 
-*** make an object holding all the functions
-
-
-
-
-function isEven(value) {
-    if (value%2 == 0)
-        return false;
-    else
-        return true;
-}
-
-function valBetweenAlt(v, min, max) {
-    if (val > min) {
-        if (val < max) {
-            return val;
-        } else return max;
-    } else return min;
-}
-
-function spaceBuilder(x) {
-    return logo.space.repeat(x);
-}
-
-
-for (n=2; n<10000; n++) {
-    if(n%2!=0) {
-        console.log("---***---***------***---***---");
-        console.log("--*****-*****----*****-*****--");
-        console.log("-***-*****-***--***-*****-***-");
-        console.log("***---***---******---***---***");
-    }
-}
-
-
-
-var str = 'Twas the night before Xmas...';
-var newstr = str.replace(/before/i, 'Christmas');
-console.log(newstr);  // Twas the night before Christmas...
-
-
-
-
-
-for (var i=0; i<5; i++) {
-  console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
-}
-
-the output is:
-
-[13:14:13.481] Hello, Bob. You've called me 1 times.
-[13:14:13.483] Hello, Bob. You've called me 2 times.
-[13:14:13.485] Hello, Bob. You've called me 3 times.
-[13:14:13.487] Hello, Bob. You've called me 4 times.
-[13:14:13.488] Hello, Bob. You've called me 5 times.
-
-
+//*** make an object holding all the functions
+//
+//
+//
+//
+//function isEven(value) {
+//    if (value%2 == 0)
+//        return false;
+//    else
+//        return true;
+//}
+//
+//function valBetweenAlt(v, min, max) {
+//    if (val > min) {
+//        if (val < max) {
+//            return val;
+//        } else return max;
+//    } else return min;
+//}
+//
+//function spaceBuilder(x) {
+//    return logo.space.repeat(x);
+//}
+//
+//
+//for (n=2; n<10000; n++) {
+//    if(n%2!=0) {
+//        console.log("---***---***------***---***---");
+//        console.log("--*****-*****----*****-*****--");
+//        console.log("-***-*****-***--***-*****-***-");
+//        console.log("***---***---******---***---***");
+//    }
+//}
+//
+//
+//
+//var str = 'Twas the night before Xmas...';
+//var newstr = str.replace(/before/i, 'Christmas');
+//console.log(newstr);  // Twas the night before Christmas...
+//
+//
+//
+//
+//
+//for (var i=0; i<5; i++) {
+//  console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
+//}
+//
+//the output is:
+//
+//[13:14:13.481] Hello, Bob. You've called me 1 times.
+//[13:14:13.483] Hello, Bob. You've called me 2 times.
+//[13:14:13.485] Hello, Bob. You've called me 3 times.
+//[13:14:13.487] Hello, Bob. You've called me 4 times.
+//[13:14:13.488] Hello, Bob. You've called me 5 times.
+//
+//
