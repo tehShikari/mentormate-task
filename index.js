@@ -44,6 +44,14 @@
 //*** while the number of rows is === to x, continue;
 //when the number of rows > x, return rows;
 
+
+//*** take x * logo.letterLeft 
+
+
+
+
+
+
 //*** make an object holding all the functions
 
 
@@ -69,6 +77,12 @@ var x = "",
         spaceMiddle: "-",
         spaceRight: "-"
 };
+
+//*** multiplies input value by length of the string ;; want to use it for swapping symbols
+function leftLetter(x) {
+    var sth = x * logo.letterLeft.length;
+    console.log(sth);
+}
 
 function firstRow(x) {
    console.log(logo.spaceLeft.repeat(x) + logo.letterLeft.repeat(x) + logo.spaceMiddle.repeat(x) + logo.letterRight.repeat(x) + logo.spaceRight.repeat(x));
