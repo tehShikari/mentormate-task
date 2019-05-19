@@ -57,28 +57,33 @@
 //}
 
 
-var logo = {
-    letter: "*",
-    space: "-"
+    
+
+var x = "",
+    minVal = 2,
+    maxVal = 10000,
+    logo = {
+        letterLeft: "*",
+        letterRight: "*",
+        spaceLeft: "-",
+        spaceMiddle: "-",
+        spaceRight: "-"
 };
 
-var str = ""
-var minVal = 2;
-var maxVal = 10000;
-
-var firstRow = function(x) {
-   str = console.log(logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x) + logo.letter.repeat(x) + logo.space.repeat(x));
+function firstRow(x) {
+   console.log(logo.spaceLeft.repeat(x) + logo.letterLeft.repeat(x) + logo.spaceMiddle.repeat(x) + logo.letterRight.repeat(x) + logo.spaceRight.repeat(x));
 }
 
-function spaceBuilder(x) {
-    return logo.space.repeat(x);
+function secondRow(x) {
+    logo.letterLeft.replace(/-/, "*");
 }
 
 function oddNum(x) {
     if (x % 2 !== 0) {
         firstRow(x);
-        firstRow = firstRow.toString(firstRow);
-        console.log(typeof(firstRow));
+        var firstRow = firstRow.toString(firstRow);
+        secondRow(x);
+        return secondRow;
     }
 }
 
@@ -98,7 +103,9 @@ function showLogo(x) {
 //    } else return min;
 //}
 
-
+//function spaceBuilder(x) {
+//    return logo.space.repeat(x);
+//}
 
 
 //for (n=2; n<10000; n++) {
@@ -120,9 +127,9 @@ function showLogo(x) {
 
 
 
-for (var i=0; i<5; i++) {
-  console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
-}
+//for (var i=0; i<5; i++) {
+//  console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
+//}
 
 //the output is:
 
