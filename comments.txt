@@ -63,6 +63,10 @@ var newStr = str.replace(/(coffee|tea)/g, function(x) {
 });
 alert(newStr); 
 
+*** try out making the firstRow in the oddNum function and then the nextRow func in a while loop until row.startsWith("*")
+
+letter = "*",
+space = "-",
 
 //*** make an object holding all the functions
 //
