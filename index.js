@@ -27,9 +27,9 @@ var x = 0,
 
 console.log(logo.firstRow(5));
 
-function secondRow(x) {
-    logo.letterLeft.replace(/-/, "*");
-}
+//function secondRow(x) {
+//    logo.letterLeft.replace(/-/, "*");
+//}
 
 function oddNum(x) {
     if (x % 2 !== 0) {
